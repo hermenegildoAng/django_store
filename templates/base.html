@@ -1,16 +1,36 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>{% block title %}Mi Proyecto Django{% endblock %}</title>
+
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
-    <div class="main-content">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">Products</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="content" class="container">
         {% block content %}
+            <p>Contenido principal.</p>
         {% endblock %}
     </div>
+
+    <footer>
+        <p>&copy; {% now "Y" %} [Tu Nombre]</p>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
 </body>
 </html>
