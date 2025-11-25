@@ -13,23 +13,16 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="#">Products</a></li>
-            </ul>
-        </nav>
+        
     </header>
 
     <div id="content" class="container">
         {% block content %}
-            <p>Contenido principal.</p>
+            
         {% endblock %}
     </div>
 
-    <footer>
-        <p>&copy; {% now "Y" %} [Tu Nombre]</p>
-    </footer>
+    
 
     {% block extra_js %}{% endblock %}
 </body>
